@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', function () {
 const consoleDiv = document.getElementById('console');
-const inputBox = document.getElementById('input
+const inputBox = document.getElementById('input');
 
 // Handle input
 inputBox.addEventListener('keydown', function(event) {
