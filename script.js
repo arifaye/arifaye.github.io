@@ -1,10 +1,6 @@
 window.addEventListener('DOMContentLoaded', function () {
 const consoleDiv = document.getElementById('console');
-const inputBox = document.getElementById('input-box');
-
-// Memory variables
-let playerName = null;
-let askedAboutChild = false;
+const inputBox = document.getElementById('input
 
 // Handle input
 inputBox.addEventListener('keydown', function(event) {
@@ -105,17 +101,4 @@ function getAIResponse(input) {
 
 return "…Processing… I don't understand. Try another question.";
 }
-
-// Help modal
-const helpBtn = document.getElementById('help-button');
-const helpModal = document.getElementById('help-modal');
-const closeHelp = document.getElementById('close-help');
-
-helpBtn.addEventListener('click', () => {
-  helpModal.style.display = 'block';
-});
-
-closeHelp.addEventListener('click', () => {
-  helpModal.style.display = 'none';
-  });
 });
