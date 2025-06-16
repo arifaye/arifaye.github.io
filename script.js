@@ -1,3 +1,4 @@
+window.addEventListener('DOMContentLoaded', function () {
 const consoleDiv = document.getElementById('console');
 const inputBox = document.getElementById('input-box');
 
@@ -116,4 +117,5 @@ helpBtn.addEventListener('click', () => {
 
 closeHelp.addEventListener('click', () => {
   helpModal.style.display = 'none';
+  });
 });
