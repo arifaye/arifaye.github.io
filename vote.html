@@ -85,7 +85,7 @@
 
     // Submit Vote and Redirect
     function submitVote(choice) {
-      fetch("YOUR_SCRIPT_URL_HERE", {
+      fetch("https://script.google.com/macros/s/AKfycbwTOO0ORaWrSxPiwXecrhixJjhgde-eAC7xUoNuRS64oKVoG4ENK3jUdZNbxUxl8Fm9pA/exec", {
         method: "POST",
         body: JSON.stringify({ vote: choice }),
         headers: {
