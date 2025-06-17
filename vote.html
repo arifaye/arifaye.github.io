@@ -47,26 +47,21 @@
       background-color: #33ff99;
       color: black;
     }
-
-    iframe {
-      display: none;
-    }
   </style>
 </head>
 <body>
   <h1>Voting Terminal: Final Override</h1>
   <p id="countdown">Countdown: Loading...</p>
 
-  <!-- Buttons -->
   <div id="voteButtons">
     <button onclick="submitVote('Bypass Security Protocol')">Bypass Security Protocol</button>
     <button onclick="submitVote('Initiate Emergency Shutdown')">Initiate Emergency Shutdown</button>
   </div>
 
   <script>
-    // Countdown logic
+    // Countdown Timer
     const countdownElement = document.getElementById("countdown");
-    const targetDate = new Date("August 1, 2025 00:01:00").getTime();
+    const targetDate = new Date("August 1, 2025 23:59:00").getTime();
 
     function updateCountdown() {
       const now = new Date().getTime();
@@ -88,27 +83,27 @@
     setInterval(updateCountdown, 1000);
     updateCountdown();
 
-    // Submit vote
-  function submitVote(choice) {
-  fetch("https://script.google.com/macros/s/AKfycbwTOO0ORaWrSxPiwXecrhixJjhgde-eAC7xUoNuRS64oKVoG4ENK3jUdZNbxUxl8Fm9pA/exec", {
-    method: "POST",
-    body: JSON.stringify({ vote: choice }),
-    headers: {
-      "Content-Type": "application/json"
+    // Vote Submission
+    function submitVote(choice) {
+      fetch("https://script.google.com/macros/s/AKfycbzksQxJ886N2urZlzCEtrEcxQ0OyLgqWwZsf-k3qdk_KAPbmNFmOAiv1KWPTgXACMaZ/exec", {
+        method: "POST",
+        body: JSON.stringify({ vote: choice }),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          alert("Vote submitted successfully.");
+        } else {
+          alert("Vote failed: " + data.error);
+        }
+      })
+      .catch(err => {
+        alert("Submission error: " + err.message);
+      });
     }
-  })
-  .then(response => response.json())
-  .then(data => {
-    if (data.success) {
-      window.location.href = "https://www.subscribepage.io/ECHO";
-    } else {
-      alert("Vote failed: " + data.error);
-    }
-  })
-  .catch(err => {
-    alert("Submission error: " + err.message);
-  });
-}
   </script>
 </body>
 </html>
