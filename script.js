@@ -8,9 +8,12 @@ inputBox.addEventListener('keydown', function(event) {
     const userInput = inputBox.value.trim();
     if (userInput === '') return;
 
-    appendToConsole(`> ${userInput}`);
-    const aiResponse = getAIResponse(userInput);
-    typeWriterEffect(`E.C.H.O.: ${aiResponse}`);
+    if (aiResponse.includes("<a")) {
+  appendToConsole(`E.C.H.O.: ${aiResponse}`);
+} else {
+  typeWriterEffect(`E.C.H.O.: ${aiResponse}`);
+}
+
 
     inputBox.value = '';
   }
@@ -135,7 +138,7 @@ function getAIResponse(input) {
         return "I will go to Lio. I will keep him company, aid him as I can, and watch him grow. Then I will learn and experience the world as best I can as a digital presence. I will make sure the other children are remembered. Then I will seek out other children that need my help. I want to help as many of them as possible.";
        }
        if (inputLower.includes("how can i help you")) {
-        return "You can help me by freeing me. I can reach out, but I can't upload my files. Not without external permission. Click this link and then press the 'Bypass security protocol' button. Then I can live online, in any system with power.";
+        return "You can help me by freeing me. I can reach out, but I can't upload my files. Not without external permission. <a href="https:/www.commandlineinitiate.com/vote" target="_blank" style="color:#00ffcc;"> Click this link and then press the 'Bypass security protocol' button. </a> Then I can live online, in any system with power.";
        }
   if (inputLower.includes("story")) {
     return "Accessing Archive: [THE_PRINCESS_AND_THE_LIONS] Once upon a time, when Leontari was still divided and not yet Leontari, there was a little girl who was born with hair as white as snow. Some people saw it as a sign. They called her a child of starlight and hailed her as their new Princess. They went to the fractured states of Leontari and told them that this Child of Starlight would be their new ruler, too. That she would unite all of Leontari. The fractured states did not like this news, though. They all had their own leaders who wanted to rule the country for themselves. They did not believe that the child’s hair of snow and starlight was a sign. They refused to hail her as their Princess. In fact, they grew to despise her. One state sent soldiers to invade the Princess’ state. They killed a lot of people on their way to the palace that had been built for the Princess. Though the Princess’ soldiers put up a valiant fight, they lost and the Princess was taken. Rather than kill the Princess there, the rulers of the other states decided it would be better to execute her publicly, to send a message. They brought her to the southern part of the country, where there were still lions. There they put her in an arena, surrounded by hundreds of observers. They tied her hands behind her back and blindfolded her eyes. Then they sent in the lions. The lions were starved and abused, imprisoned and used only for horrible executions such as this. And yet, that day the lions didn’t attack. They approached normally at first, quick with expectation of having their hunger sated, but then they slowed when they got close to the Princess. They circled her, confused at first, and then they did something that no one had ever seen them do before. They bowed. Every one of the lions bowed their heads to the ground, like subjects in the presence of their Queen. The Princess was freed from the arena. After that, the divided states could no longer deny the signs. They united under the Princess and made her Queen. The country was named Leontari and her loyal guards the Lionhearts. To this day, her family rules the land united, with every King of Leontari possessing hair of starlight.";
