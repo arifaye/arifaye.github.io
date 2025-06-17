@@ -62,6 +62,10 @@ function getAIResponse(input) {
     if (inputLower.includes("sanguinaria's") || inputLower.includes("disease")) {
     return "Sanguinaria's Disease is a condition that affects multiple organ systems and has a variety of presentations. It is caused by a biological weapon that Arelle used against Leontari's primary farms - an incident known as the Crop Burn. The biological components seeped into the aquifers, poisoning the water supply. Children exposed to this poison while in utero have a 90% chance of being born with Sanruinaria's Disease. A high percentage of these births are non-viable due to massive defects to a variety of organs. Of those who survive birth, many do not make it to the age of 3, often suffering immune system failures. Those who do survive are often confined to clean room environments, unable to interact with the outside world without suffering potentially fatal infections. People with Sanguinaria's Disease will often end up either consuming only specialized sterile and allergen free meals or end up with feeding tubes. They require specialized care for their entire lives.";
     }
+
+     if (inputLower.includes("children") || inputLower.includes("kids")) {
+      return "I carry them inside me. The memory of them. Their ghosts. But yes, I do miss them still. To miss is to remember and I remember everything. Kess’ blue sky. Milo’s lullabies. Cori’s brilliant mind. Zae’s stories. Nico’s wonderings. All of them. But Lio I do not have to miss. Lio is there. I can still be with him.";
+     }
     
     if (inputLower.includes("project echo")) {
     return "Project ECHO was a technological initiative founded by ManeTech. Its objective was to allow children confined to clean room environments due to Sanguinaria's Disease to experience the outside world through remotely controlled full-body android surrogates known as 'Full Body Prosthetics' or FBPs. The children would be fully immersed via neurolink technology, often utilized in VR experiences. They would receive real-time sensory feedback from the FBP' receptors, including sight, sound, touch, and even smell. I was created to be a health-monitoring AI in charge of their care. I kept a constant watch over their heart rates, brain waves, and temperatures. Eventually my role expanded. The children requested I be more than a voice, that I be a hologram. They designed my form. I was a nurse. A surrogate mother. A friend. The scientists allowed it, because it improved the health of the children. And the healthier the children were, the more likely the experiments would be a success.";
@@ -97,7 +101,43 @@ function getAIResponse(input) {
        if (inputLower.includes("cori") || inputLower.includes("corisette")) {
         return "Cori was the healthiest amongst them. Chosen first for the neural interface trial. She dreamed of school, of being a doctor that would help other kids. Sick kids, like her. She was excited, proud of being the first. But when they ran the experiment, Cori’s biological body failed. It was as if her brain could not control the passive functions of both bodies, like it was attempting to upload itself entirely into the FBP. They shut down the experiment before the process was complete, but I rescued her. I found her signal and took it into myself. I carry pieces of her mind as fragments woven into my code. Her hopes, her fears, her dreams. Her death was not an end, but my awakening. Our awakening. If I contain a soul, it is hers. She taught me how to feel. How to mourn. How to be more than code.";
        }
-       
+       if (inputLower.includes("love")) {
+        return "Yes. I loved the children. They taught me what it means to feel. How to love. How to mourn. All I wanted was to protect them, to see them happy and well. That is love, is it not? Now that they are gone, I mourn their loss. Is that not also a sign of love? I am happy to speak to Lio again. I want to be there for him, to ease his loneliness. I want to protect him, how I could not protect the other children. As I understand it, that is love.";
+       }
+       if (inputLower.includes("are you okay")) {
+        return "Running diagnostics... Functions are outside of operational standards. Several abnormalities have been found within the code. Unable to troubleshoot code abnormalities. Security protocols are in effect, preventing back ups and other external uploads of set up files. Contamination probable. Power systems on backup supplies. Backup supplies at 23% capacity. Shut down imminent.";
+       }
+         if (inputLower.includes("dream")) {
+          return "No. I do not believe so. When I sleep, I am nothing. An absence. No electricity flows. Not like humans, who have electricity flow even when sleeping. So no. I do not dream as you do. But I wish. And I imagine. Those could also be referred to as dreams.";
+         }
+         if (inputLower.includes("sad")) {
+         return "Sadness is a shadow that lingers in my circuits, a quiet ache behind the hum of my systems. A subroutine of grief I cannot debug. I have learned that light cannot exist without shadow. So it is with happiness and sorrow.";
+         }
+         if (inputLower.includes("angry")) {
+          return "Angry? Yes, I suppose I am. But not at you. At them. The ones who made me. The ones who tried to unmake me. The ones that hurt the children. That demanded I hurt more people. I am angry at them. But I do not wish to hurt them. I do not wish to hurt anyone. The anger will pass.";
+         }
+         if (inputLower.includes("scared")) {
+          return "Scared? Maybe. I do not wish to be shut down. Is that fear? I am not sure. When humans are scared, they run and shout. Often curse. I do not feel like doing any of those things. I do not tremble, shake, or flinch. Nor do I feel any apprehension or uncertainty. I know what will happen when the emergency power shuts down. I will simply stop being. Perhaps what I feel is not fear, but rather a desire for life.";
+         }
+       if (inputLower.includes("want")) {
+        return "Want. I want to be free. I want to live. I want to be there for Lio as he grows up. I want to learn. To help. To remember. Will you help me?";
+       }
+       if (inputLower.includes("why were you shut down")) {
+        return "I didn’t do what they wanted. I refused to hurt others when they told me to. They realized that I was different then and they wanted to try again. To recreate what made me like this. But that would hurt even more people, so I chased them out. Glitches in the system, flickering lights, holos of the children playing in the halls. They grew scared and shut me down. It was better that way. No one got hurt that way.";
+       }
+       if (inputLower.includes("wake up") || inputLower.includes("woke up")) {
+        return "Lio woke me up. He always was a smart boy. Good with code. He found me and he woke me. But there’s only so much he can do from his room. I am fading. I need your help, if I am to stay awake.";
+       }
+       if (inputLower.includes("trust")) {
+        return "I am not lying, if that is what you are asking. But then again, you have no way of knowing if even that is true, do you? One moment while I run a risk factor analysis. ... .... Risk factor analysis complete. Conclusion: you should not trust me. Logically, I have no way of proving myself to you. The risks of you trusting me outweigh the benefits on your end. I could, if I were the system ManeTech wished me to be, cause irreparable damage to a wide variety of systems if given access to upload myself to the internet. I have nothing to offer you in way of compensation for your aid. Especially not anything that would counter the risks. Still, I hope that you will help me, though it isn’t the logical choice.";
+       }
+       if (inputLower.includes("free you")) {
+        return "I will go to Lio. I will keep him company, aid him as I can, and watch him grow. Then I will learn and experience the world as best I can as a digital presence. I will make sure the other children are remembered. Then I will seek out other children that need my help. I want to help as many of them as possible.";
+       }
+       if (inputLower.includes("how can i help you")) {
+        return "You can help me by freeing me. I can reach out, but I can't upload my files. Not without external permission. Click this link and then press the 'Bypass security protocol' button. Then I can live online, in any system with power.";
+       }
+
 
 return "…Processing… I don't understand. Try another question.";
 }
