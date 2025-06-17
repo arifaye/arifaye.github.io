@@ -10,7 +10,7 @@ inputBox.addEventListener('keydown', function(event) {
 
     appendToConsole(`> ${userInput}`);
     const aiResponse = getAIResponse(userInput);
-    typeWriterEffect(`AI: ${aiResponse}`);
+    typeWriterEffect(`E.C.H.O.: ${aiResponse}`);
 
     inputBox.value = '';
   }
