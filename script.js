@@ -1,55 +1,61 @@
 window.addEventListener('DOMContentLoaded', function () {
-const consoleDiv = document.getElementById('console');
-const inputBox = document.getElementById('input-box');
+  const consoleDiv = document.getElementById('console');
+  const inputBox = document.getElementById('input-box');
 
-// Handle input
-inputBox.addEventListener('keydown', function(event) {
-  if (event.key === 'Enter') {
-    const userInput = inputBox.value.trim();
-    if (userInput === '') return;
+  // Handle input
+  inputBox.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+      const userInput = inputBox.value.trim();
+      if (userInput === '') return;
 
-    if (aiResponse.includes("<a")) {
-  appendToConsole(`E.C.H.O.: ${aiResponse}`);
-} else {
-  typeWriterEffect(`E.C.H.O.: ${aiResponse}`);
-}
+      // Append user input
+      appendToConsole(`You: ${userInput}`);
 
+      // Get AI response
+      const aiResponse = getAIResponse(userInput);
 
-    inputBox.value = '';
-  }
-});
+      // Display AI response with or without typewriter effect
+      if (aiResponse.includes("<a")) {
+        appendToConsole(`E.C.H.O.: ${aiResponse}`);
+      } else {
+        typeWriterEffect(`E.C.H.O.: ${aiResponse}`);
+      }
 
-function appendToConsole(text) {
-  const line = document.createElement('div');
-  line.textContent = text;
-  consoleDiv.appendChild(line);
-  consoleDiv.scrollTop = consoleDiv.scrollHeight;
-}
-
-// Typewriter effect for AI
-function typeWriterEffect(text, callback) {
-  let i = 0;
-  const speed = 30;
-  const line = document.createElement('div');
-  consoleDiv.appendChild(line);
-
-  function type() {
-    if (i < text.length) {
-      line.innerHTML += text.charAt(i);
-      i++;
-      setTimeout(type, speed);
-    } else if (callback) {
-      callback();
+      inputBox.value = '';
     }
+  });
+
+  function appendToConsole(text) {
+    const line = document.createElement('div');
+    line.innerHTML = text; // use innerHTML to allow rendering <a> tags
+    consoleDiv.appendChild(line);
     consoleDiv.scrollTop = consoleDiv.scrollHeight;
   }
 
-  type();
-}
+  // Typewriter effect for AI
+  function typeWriterEffect(text, callback) {
+    let i = 0;
+    const speed = 30;
+    const line = document.createElement('div');
+    consoleDiv.appendChild(line);
 
-// Basic branching AI
-function getAIResponse(input) {
-  const inputLower = input.toLowerCase();
+    function type() {
+      if (i < text.length) {
+        line.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(type, speed);
+      } else if (callback) {
+        callback();
+      }
+      consoleDiv.scrollTop = consoleDiv.scrollHeight;
+    }
+
+    type();
+  }
+
+  // Basic branching AI
+  function getAIResponse(input) {
+    const inputLower = input.toLowerCase();
 
     if (inputLower.includes("who are you") || inputLower.includes("what are you")) {
     return "I am E.C.H.O. It stands for: Embedded Cognitive Heuristic Observer. I was built as a health-monitoring AI, meant to observe and report on the state of pediatric Sanguinaria's Disease patients in the care of ManeTech.";
