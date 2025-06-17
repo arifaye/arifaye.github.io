@@ -83,9 +83,9 @@
     setInterval(updateCountdown, 1000);
     updateCountdown();
 
-    // Vote Submission
+    // Submit Vote and Redirect
     function submitVote(choice) {
-      fetch("https://script.google.com/macros/s/AKfycbzksQxJ886N2urZlzCEtrEcxQ0OyLgqWwZsf-k3qdk_KAPbmNFmOAiv1KWPTgXACMaZ/exec", {
+      fetch("YOUR_SCRIPT_URL_HERE", {
         method: "POST",
         body: JSON.stringify({ vote: choice }),
         headers: {
@@ -95,15 +95,6 @@
       .then(response => response.json())
       .then(data => {
         if (data.success) {
-          alert("Vote submitted successfully.");
+          window.location.href = "https://www.subscribepage.io/ECHO";
         } else {
           alert("Vote failed: " + data.error);
-        }
-      })
-      .catch(err => {
-        alert("Submission error: " + err.message);
-      });
-    }
-  </script>
-</body>
-</html>
