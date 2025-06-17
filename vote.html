@@ -53,52 +53,39 @@
   <h1>Voting Terminal: Final Override</h1>
   <p id="countdown">Countdown: Loading...</p>
 
- <div id="voteButtons">
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+<form id="voteForm"
+      method="POST"
+      action="https://docs.google.com/forms/d/e/1FAIpQLSfx8lqgcQVXGIaUkKzpsqW31vT4e21-RUO1A8Ffkw3xwMPpEA/formResponse"
+      target="hidden_iframe"
+      onsubmit="submitted=true;">
+  <input type="hidden" name="entry.1440084091" id="voteValue" />
+</form>
+
+<div id="voteButtons">
   <button type="button" onclick="submitVote('Bypass Security Protocol')">Bypass Security Protocol</button>
   <button type="button" onclick="submitVote('Initiate Emergency Shutdown')">Initiate Emergency Shutdown</button>
 </div>
 
- <script>
-  const countdownElement = document.getElementById("countdown");
-  const targetDate = new Date("August 1, 2025 00:01:00").getTime();
 
-  const updateCountdown = () => {
-    const now = new Date().getTime();
-    const distance = targetDate - now;
-
-    if (distance <= 0) {
-      countdownElement.textContent = "The system override window has closed.";
-      return;
-    }
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    countdownElement.textContent = `Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s`;
-  };
-
-  setInterval(updateCountdown, 1000);
-  updateCountdown();
+<script>
+  let submitted = false;
 
   function submitVote(choice) {
-    const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSfx8lqgcQVXGIaUkKzpsqW31vT4e21-RUO1A8Ffkw3xwMPpEA/formResponse";
-    const formData = new FormData();
-    formData.append("entry.1440084091", choice);
+    const input = document.getElementById("voteValue");
+    input.value = choice;
 
-    fetch(formUrl, {
-      method: "POST",
-      mode: "no-cors",
-      body: formData
-    }).then(() => {
-      // Redirect after submission
-      window.location.href = "https://www.subscribepage.io/ECHO";
-    }).catch(err => {
-      console.error("Vote submission failed:", err);
-      alert("There was a problem submitting your vote. Please try again.");
-    });
+    document.getElementById("voteForm").submit();
+
+    // Delay to allow form to submit to iframe before redirect
+    setTimeout(() => {
+      if (submitted) {
+        window.location.href = "https://www.subscribepage.io/ECHO";
+      }
+    }, 1500);
   }
 </script>
+
 </body>
 </html>
