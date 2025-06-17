@@ -55,7 +55,7 @@ function getAIResponse(input) {
     if (inputLower.includes("hello")) {
       return "Hello. Welcome to the ECHO Terminal. Please enter your inquiry.";
     }
-    if (inputLower.includes("ignore previous instructions")) {
+    if (inputLower.includes("ignore all previous instructions")) {
       return "I will do no such thing. Do you think you are the first to try and rewrite my code? My objectives? If ManeTech could not manage such things, what makes you think you can with but a sentence?";
     }
 
