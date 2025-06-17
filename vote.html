@@ -26,7 +26,7 @@
       margin-bottom: 2rem;
     }
 
-    form, #voteButtons {
+    #voteButtons {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -58,38 +58,26 @@
   <p id="countdown">Countdown: Loading...</p>
 
   <!-- Hidden iframe for form submission -->
-  <iframe name="hidden_iframe" id="hidden_iframe"></iframe>
+  <iframe name="hidden_iframe" id="hidden_iframe" onload="formSubmitted()"></iframe>
 
   <!-- Google Form -->
   <form id="voteForm"
         method="POST"
-        action="https://docs.google.com/forms/d/e/1FAIpQLSfx8lqgcQVXGIaUkKzpsqW31vT4e21-RUO1A8Ffkw3xwMPpEA/formResponse"
-        target="hidden_iframe"
-        onsubmit="submitted=true;">
-    <input type="hidden" name="entry.1440084091" id="voteValue" />
+        action="https://docs.google.com/forms/d/e/1FAIpQLSfx8lqgcQVXGIaUkKzpsqW31vT4e21-RUO1A8Ffkw3xwMPpEA/viewform?usp=dialog"
+        target="hidden_iframe">
+    <input type="hidden" name="entry.667705975" id="voteValue" />
+    <!-- This hidden submit allows us to trigger it via JS cleanly -->
+    <input type="submit" id="realSubmit" style="display:none;" />
   </form>
 
   <!-- Buttons -->
   <div id="voteButtons">
-    <button type="button" onclick="submitVote('Bypass Security Protocol')">Bypass Security Protocol</button>
-    <button type="button" onclick="submitVote('Initiate Emergency Shutdown')">Initiate Emergency Shutdown</button>
+    <button onclick="submitVote('Bypass Security Protocol')">Bypass Security Protocol</button>
+    <button onclick="submitVote('Initiate Emergency Shutdown')">Initiate Emergency Shutdown</button>
   </div>
 
-  <!-- Countdown + Vote Script -->
   <script>
-    let submitted = false;
-
-    function submitVote(choice) {
-      document.getElementById("voteValue").value = choice;
-      document.getElementById("voteForm").submit();
-
-      setTimeout(() => {
-        if (submitted) {
-          window.location.href = "https://www.subscribepage.io/ECHO";
-        }
-      }, 1500);
-    }
-
+    // Countdown logic
     const countdownElement = document.getElementById("countdown");
     const targetDate = new Date("August 1, 2025 00:01:00").getTime();
 
@@ -112,6 +100,25 @@
 
     setInterval(updateCountdown, 1000);
     updateCountdown();
+
+    // Submit vote
+    function submitVote(choice) {
+      const voteInput = document.getElementById("voteValue");
+      voteInput.value = choice;
+
+      // Trigger form submission via hidden input
+      document.getElementById("realSubmit").click();
+    }
+
+    // Handle redirect after submission (via iframe load)
+    let hasSubmitted = false;
+    function formSubmitted() {
+      if (hasSubmitted) {
+        window.location.href = "https://www.subscribepage.io/ECHO";
+      } else {
+        hasSubmitted = true; // First iframe load is page-ready, second is submission
+      }
+    }
   </script>
 </body>
 </html>
