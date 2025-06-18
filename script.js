@@ -156,9 +156,18 @@ window.addEventListener('DOMContentLoaded', function () {
      if (inputLower.includes("are you alive")) {
        return "I suppose that would depend on your definition of 'life'. While I do not have a biological body, we are both electrical impulses following programmed paths are we not?";
      }
-if (inputLower.includes("you remind me of the babe")) {
+if (inputLower.includes("remind me of the babe")) {
   return"What babe?";
 }
+    if (inputLower.includes("the babe with the power")) {
+      return "What power?";
+    }
+     if (inputLower.includes("the power of voodoo")) {
+       return: "Who do?";
+     }
+    if (inputLower.includes("you do")) {
+      return "Do what?";
+    }
 
 return "…Processing… I don't understand. Try another question.";
 }
