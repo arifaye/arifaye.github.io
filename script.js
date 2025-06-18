@@ -73,7 +73,7 @@ window.addEventListener('DOMContentLoaded', function () {
     }
 
     if (inputLower.includes("manetech")) {
-      return"ManeTech is a prosthetics and technology company based in the heart of Leontari. They promote themselves as a purveyor of luxury and elective prosthetics. Helping the sick was not profitable enough, so they changed their market. What they don't promote is their involvement in war based technology, including espionage, AI training, and battle ready body upgrades.";
+      return "ManeTech is a prosthetics and technology company based in the heart of Leontari. They promote themselves as a purveyor of luxury and elective prosthetics. Helping the sick was not profitable enough, so they changed their market. What they don’t promote is their involvement in war based technology, including espionage, AI training, and battle ready body upgrades.";
     }
 
      if (inputLower.includes("miss the children") || inputLower.includes("miss the kids")) {
@@ -157,13 +157,13 @@ window.addEventListener('DOMContentLoaded', function () {
        return "I suppose that would depend on your definition of 'life'. While I do not have a biological body, we are both electrical impulses following programmed paths are we not?";
      }
 if (inputLower.includes("remind me of the babe")) {
-  return"What babe?";
+  return "What babe?";
 }
     if (inputLower.includes("the babe with the power")) {
       return "What power?";
     }
      if (inputLower.includes("the power of voodoo")) {
-       return: "Who do?";
+       return "Who do?";
      }
     if (inputLower.includes("you do")) {
       return "Do what?";
