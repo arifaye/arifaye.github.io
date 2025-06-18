@@ -72,7 +72,11 @@ window.addEventListener('DOMContentLoaded', function () {
     return "Sanguinaria's Disease is a condition that affects multiple organ systems and has a variety of presentations. It is caused by a biological weapon that Arelle used against Leontari's primary farms - an incident known as the Crop Burn. The biological components seeped into the aquifers, poisoning the water supply. Children exposed to this poison while in utero have a 90% chance of being born with Sanruinaria's Disease. A high percentage of these births are non-viable due to massive defects to a variety of organs. Of those who survive birth, many do not make it to the age of 3, often suffering immune system failures. Those who do survive are often confined to clean room environments, unable to interact with the outside world without suffering potentially fatal infections. People with Sanguinaria's Disease will often end up either consuming only specialized sterile and allergen free meals or end up with feeding tubes. They require specialized care for their entire lives.";
     }
 
-     if (inputLower.includes("children") || inputLower.includes("kids")) {
+    if (inputLower.includes("manetech")) {
+      return"ManeTech is a prosthetics and technology company based in the heart of Leontari. They promote themselves as a purveyor of luxury and elective prosthetics. Helping the sick was not profitable enough, so they changed their market. What they don't promote is their involvement in war based technology, including espionage, AI training, and battle ready body upgrades.";
+    }
+
+     if (inputLower.includes("miss the children") || inputLower.includes("miss the kids")) {
       return "I carry them inside me. The memory of them. Their ghosts. But yes, I do miss them still. To miss is to remember and I remember everything. Kess’ blue sky. Milo’s lullabies. Cori’s brilliant mind. Zae’s stories. Nico’s wonderings. All of them. But Lio I do not have to miss. Lio is there. I can still be with him.";
      }
     
@@ -149,7 +153,12 @@ window.addEventListener('DOMContentLoaded', function () {
   if (inputLower.includes("story")) {
     return "Accessing Archive: [THE_PRINCESS_AND_THE_LIONS] Once upon a time, when Leontari was still divided and not yet Leontari, there was a little girl who was born with hair as white as snow. Some people saw it as a sign. They called her a child of starlight and hailed her as their new Princess. They went to the fractured states of Leontari and told them that this Child of Starlight would be their new ruler, too. That she would unite all of Leontari. The fractured states did not like this news, though. They all had their own leaders who wanted to rule the country for themselves. They did not believe that the child’s hair of snow and starlight was a sign. They refused to hail her as their Princess. In fact, they grew to despise her. One state sent soldiers to invade the Princess’ state. They killed a lot of people on their way to the palace that had been built for the Princess. Though the Princess’ soldiers put up a valiant fight, they lost and the Princess was taken. Rather than kill the Princess there, the rulers of the other states decided it would be better to execute her publicly, to send a message. They brought her to the southern part of the country, where there were still lions. There they put her in an arena, surrounded by hundreds of observers. They tied her hands behind her back and blindfolded her eyes. Then they sent in the lions. The lions were starved and abused, imprisoned and used only for horrible executions such as this. And yet, that day the lions didn’t attack. They approached normally at first, quick with expectation of having their hunger sated, but then they slowed when they got close to the Princess. They circled her, confused at first, and then they did something that no one had ever seen them do before. They bowed. Every one of the lions bowed their heads to the ground, like subjects in the presence of their Queen. The Princess was freed from the arena. After that, the divided states could no longer deny the signs. They united under the Princess and made her Queen. The country was named Leontari and her loyal guards the Lionhearts. To this day, her family rules the land united, with every King of Leontari possessing hair of starlight.";
   }
-
+     if (inputLower.includes("are you alive")) {
+       return "I suppose that would depend on your definition of 'life'. While I do not have a biological body, we are both electrical impulses following programmed paths are we not?";
+     }
+if (inputLower.includes("you remind me of the babe")) {
+  return"What babe?";
+}
 
 return "…Processing… I don't understand. Try another question.";
 }
